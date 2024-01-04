@@ -1,26 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
 import Header from "./Header.jsx";
 import Tabs from "./components/tabs.jsx";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useMutation,
-} from "@tanstack/react-query";
-import HorizBtn from "./components/HorizBtn.jsx";
 import { useReset } from "./api-calls.jsx";
 import useClearApiData from "./hooks/useClearApiData.jsx";
 
 const App = () => {
-  const [count, setCount] = React.useState(0);
   const { mutate: resetActivities } = useReset({
-    onSuccess: () => {
-      // setCount((val) => val + 1)
-      resetQueries();
-    },
+    onSuccess: useClearApiData,
   });
-  const resetQueries = useClearApiData();
+  // const resetQueries = useClearApiData();
   const reset = () => {
     resetActivities();
   };

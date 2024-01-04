@@ -27,7 +27,8 @@ export default function MyTabs() {
           className= "flex justify-between px-8 sticky top-8 bg-lime-100 py-4 rounded-b-md" 
         >
           {comps.map((comp) => (
-            <Tab 
+            <Tab
+            key={comp.name} 
             className={({ selected }) =>
             classNames("px-3 py-2 rounded-md font-bold", 
             selected && "bg-lime-700 text-white"
@@ -38,7 +39,7 @@ export default function MyTabs() {
         </Tab.List>
         <Tab.Panels as="div" className="">
           {comps.map((comp) => (
-            <Tab.Panel>
+            <Tab.Panel key={comp.name}>
               <comp.component />
             </Tab.Panel>
           ))}

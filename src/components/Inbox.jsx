@@ -30,7 +30,7 @@ function Inbox() {
     <div className="w-full">
       <HorizBtn title="Archive All" action={archiveAll} />
       {filteredActivities?.map((activity) => (
-        <ActivityRow activity={activity} archiveFn={archiveActivity} />
+        <ActivityRow key={activity.id} activity={activity} archiveFn={archiveActivity} />
       ))}
     </div>
   );

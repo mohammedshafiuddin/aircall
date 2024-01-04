@@ -41,7 +41,7 @@ function ActivityRow({ activity, archiveFn, unArchiveFn }) {
     new Date(activity.created_at).getHours(),
     new Date(activity.created_at).getMinutes()
   );
-  console.log({id:activity.id})
+  // console.log({id:activity.id})
   
   return (
     <div className="flex gap-3 activity-row px-3 py-1.5">
